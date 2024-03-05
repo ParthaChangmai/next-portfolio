@@ -2,6 +2,9 @@ import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Inter } from "next/font/google";
 
+import Social from "@/components/Social";
+import Footer from "@/components/footer";
+import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import "./globals.css";
 
@@ -29,6 +32,9 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <Footer />
+            <Social />
+            <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

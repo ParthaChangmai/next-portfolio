@@ -34,13 +34,12 @@ export default function Experience() {
                 borderRight:
                   theme === "light"
                     ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
+                    : "0.4rem solid #334155",
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
+                background: theme === "light" ? "white" : "#334155",
                 fontSize: "1.5rem",
               }}
             >
