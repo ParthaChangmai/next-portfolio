@@ -12,7 +12,7 @@ const Social = () => {
       className="hidden lg:flex fixed flex-col top-[35%] left-0"
     >
       <ul>
-        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] dark:border-solid duration-500  hover:bg-[#0A66C2] dark:hover:bg-[#0A66C2]">
+        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] dark:border-solid duration-500  hover:bg-[#0A66C2] dark:text-white hover:text-white dark:hover:bg-[#0A66C2]">
           <a
             className="flex pl-4 justify-between items-center w-full dark:text-white hover:text-white"
             href="https://www.linkedin.com/in/partha-changmai-6a9293208"
@@ -22,7 +22,7 @@ const Social = () => {
             Linkedin <FaLinkedin size={30} />
           </a>
         </li>
-        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-500  hover:bg-[#333333] dark:hover:bg-[#333333]">
+        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-500  hover:bg-[#333333] dark:hover:bg-[#333333] dark:text-white hover:text-white">
           <a
             className="flex pl-4 justify-between items-center w-full dark:text-white hover:text-white"
             href="https://github.com/ParthaChangmai"
@@ -32,10 +32,10 @@ const Social = () => {
             Github <FaGithub size={30} />
           </a>
         </li>
-        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-500  hover:bg-[#6fc2b0] dark:hover:bg-[#6fc2b0]">
+        <li className="w-[160px] pr-4 h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-500  hover:bg-[#6fc2b0] dark:hover:bg-[#6fc2b0] dark:text-white hover:text-white">
           <a
             className="flex pl-4 justify-between items-center w-full dark:text-white hover:text-white"
-            href="mailto:chaoviper@gmail.com"
+            href="mailto:partha.partha.changmai@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
