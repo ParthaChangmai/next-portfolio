@@ -11,6 +11,7 @@ type ThemeContextProviderProps = {
 type ThemeContextType = {
   theme: Theme;
   toggleTheme: () => void;
+  isLoading: boolean;
 };
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
@@ -19,6 +20,7 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>("light");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -41,9 +43,11 @@ export default function ThemeContextProvider({
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");
       }
+      setIsLoading(false);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
+      setIsLoading(false);
     }
   }, []);
 
@@ -52,6 +56,7 @@ export default function ThemeContextProvider({
       value={{
         theme,
         toggleTheme,
+        isLoading,
       }}
     >
       {children}
