@@ -3,8 +3,21 @@ import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaCss3, FaGithub, FaHtml5, FaPython, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import {
+  SiChakraui,
+  SiDjango,
+  SiFirebase,
+  SiJavascript,
+  SiMongodb,
+  SiMui,
+  SiRedux,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { TbBrandFramerMotion, TbBrandNextjs } from "react-icons/tb";
 
 export const links = [
   {
@@ -98,22 +111,72 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Redux",
-  "Next.js",
-  "Git",
-  "Firebase",
-  "Supabase",
-  "Tailwind",
-  "Chakra",
-  "Material UI",
-  "MongoDB",
-  // "GraphQL",
-  "Python",
-  "Django",
-  "Framer Motion",
-] as const;
+  {
+    name: "HTML",
+    icon: FaHtml5,
+  },
+  {
+    name: "CSS",
+    icon: FaCss3,
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+  },
+  {
+    name: "React",
+    icon: FaReact,
+  },
+  {
+    name: "Redux",
+    icon: SiRedux,
+  },
+  {
+    name: "Next.js",
+    icon: TbBrandNextjs,
+  },
+  {
+    name: "Git",
+    icon: FaGithub,
+  },
+  {
+    name: "Firebase",
+    icon: SiFirebase,
+  },
+  {
+    name: "Supabase",
+    icon: SiSupabase,
+  },
+  {
+    name: "Tailwind",
+    icon: SiTailwindcss,
+  },
+  {
+    name: "Chakra",
+    icon: SiChakraui,
+  },
+  {
+    name: "Material UI",
+    icon: SiMui,
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+  },
+  {
+    name: "Python",
+    icon: FaPython,
+  },
+  {
+    name: "Django",
+    icon: SiDjango,
+  },
+  {
+    name: "Framer Motion",
+    icon: TbBrandFramerMotion,
+  },
+];
