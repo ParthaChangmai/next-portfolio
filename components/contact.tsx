@@ -4,7 +4,7 @@
 import { sendEmail } from "@/actions/sendEmail";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import SectionHeading from "./section-heading";
 import SubmitBtn from "./submit-btn";
 
@@ -29,6 +29,7 @@ export default function Contact() {
         once: true,
       }}
     >
+      <Toaster position="top-right" reverseOrder={false} />
       <SectionHeading>Contact me</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
