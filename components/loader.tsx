@@ -1,10 +1,10 @@
 function Loader() {
   return (
-    <main className="absolute top-0 bg-gradient-to-r from-[#fbe2e3] via-[#c6c0f7] to-[#dbd7fb] h-[100vh] w-[100%] z-[99] flex justify-center items-center">
+    <main className="absolute top-0 z-[99] flex h-screen w-full items-center justify-center bg-[#f7f8f5] dark:bg-[#080b0a]">
       <div>
         <svg
           aria-hidden="true"
-          className="inline w-8 h-8 text-black animate-spin dark:text-blue-600 fill-purple-600"
+          className="inline h-8 w-8 animate-spin fill-lime-500 text-slate-200 dark:text-slate-800"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

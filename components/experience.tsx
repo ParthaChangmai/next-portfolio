@@ -16,17 +16,17 @@ export default function Experience() {
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
+    <section id="experience" ref={ref} className="mb-28 w-full max-w-[68rem] scroll-mt-28 sm:mb-36">
+      <SectionHeading>Experience and impact</SectionHeading>
       <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
+        {[...experiencesData].reverse().map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
               contentStyle={{
                 background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                  theme === "light" ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.045)",
+                boxShadow: "0 20px 60px -40px rgba(15,23,42,.45)",
+                border: theme === "light" ? "1px solid rgba(15,23,42,.1)" : "1px solid rgba(255,255,255,.1)",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}
@@ -43,14 +43,14 @@ export default function Experience() {
                 fontSize: "1.5rem",
               }}
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="!mt-1 font-semibold text-lime-700 dark:text-lime-300">{item.location}</p>
 
               {item.description.map((el, i) => {
                 return (
                   <p
                     key={i}
-                    className="!mt-1 !font-normal text-gray-700 dark:text-white/75"
+                    className="!mt-3 !font-normal leading-6 text-slate-600 dark:text-slate-300"
                   >
                     {el}
                   </p>

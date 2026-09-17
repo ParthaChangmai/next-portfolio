@@ -15,7 +15,7 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="surface mb-20 w-[min(100%,48rem)] rounded-[2rem] px-6 py-10 text-center sm:mb-28 sm:px-12 sm:py-12"
       initial={{
         opacity: 0,
       }}
@@ -30,18 +30,18 @@ export default function Contact() {
       }}
     >
       <Toaster position="top-right" reverseOrder={false} />
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>Let&apos;s build something useful</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
+      <p className="-mt-6 text-slate-600 dark:text-slate-300">
+        Have a frontend or full stack role in mind? Email me at{" "}
         <a className="underline" href="mailto:partha.partha.changmai@gmail.com">
           partha.partha.changmai@gmail.com
         </a>{" "}
-        or through this form.
+        or use the form below.
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black"
+        className="mt-10 flex flex-col text-left dark:text-black"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
@@ -54,7 +54,8 @@ export default function Contact() {
         }}
       >
         <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          aria-label="Your email"
+          className="h-14 rounded-xl border border-slate-900/10 bg-white px-4 outline-none transition focus:border-lime-500 focus:ring-4 focus:ring-lime-300/20 dark:bg-white/90"
           name="senderEmail"
           type="email"
           required
@@ -62,7 +63,8 @@ export default function Contact() {
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          aria-label="Your message"
+          className="my-3 h-52 rounded-xl border border-slate-900/10 bg-white p-4 outline-none transition focus:border-lime-500 focus:ring-4 focus:ring-lime-300/20 dark:bg-white/90"
           name="message"
           placeholder="Your message"
           required

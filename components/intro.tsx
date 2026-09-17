@@ -4,106 +4,54 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
+
+const stats = [
+  ["5.5+", "years building web products"],
+  ["20%", "faster application load time"],
+  ["Full stack", "React interfaces to Node.js APIs"],
+];
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
-    >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="h-[2rem]"
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
-            <motion.span
-              className=" absolute pt-11 bottom-0 right-0 text-4xl cursor-default"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 125,
-                delay: 0.1,
-                duration: 0.7,
-              }}
-            >
-              👋
-            </motion.span>
-          </motion.div>
+    <section ref={ref} id="home" className="mb-28 w-full max-w-[72rem] scroll-mt-[100rem] sm:mb-36">
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="surface overflow-hidden rounded-[2rem] px-6 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
+        <div className="grid items-end gap-12 lg:grid-cols-[1.35fr_0.65fr]">
+          <div>
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-lime-500/30 bg-lime-300/15 px-4 py-2 text-sm font-semibold text-lime-800 dark:text-lime-200">
+              <span className="h-2 w-2 rounded-full bg-lime-500" />
+              Frontend and Full Stack Engineer
+            </div>
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.065em] sm:text-6xl lg:text-[5.25rem] lg:leading-[0.98]">
+              I build fast, accessible products from interface to API.
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg dark:text-slate-300">
+              I&apos;m Partha, a software engineer working with React, Next.js, TypeScript, Node.js, REST APIs, and PostgreSQL. I turn product requirements into dependable web experiences and measurable performance improvements.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <Link href="#contact" className="group flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 font-semibold text-white transition hover:-translate-y-1 hover:bg-slate-800 dark:bg-lime-300 dark:text-slate-950 dark:hover:bg-lime-200" onClick={() => { setActiveSection("Contact"); setTimeOfLastClick(Date.now()); }}>
+                Let&apos;s work together <BsArrowRight className="transition group-hover:translate-x-1" />
+              </Link>
+              <a className="surface flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold transition hover:-translate-y-1" href="/CV.pdf" download>
+                Download résumé <HiDownload />
+              </a>
+              <a className="surface rounded-full p-4 transition hover:-translate-y-1" href="https://www.linkedin.com/in/partha-changmai-6a9293208/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><BsLinkedin /></a>
+              <a className="surface rounded-full p-4 transition hover:-translate-y-1" href="https://github.com/ParthaChangmai" target="_blank" rel="noreferrer" aria-label="GitHub profile"><BsGithub /></a>
+            </div>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            {stats.map(([value, label]) => (
+              <div key={value} className="rounded-2xl border border-slate-900/10 bg-slate-950 p-5 text-white dark:border-white/10 dark:bg-white/[0.07]">
+                <p className="text-2xl font-semibold tracking-tight text-lime-300">{value}</p>
+                <p className="mt-1 text-sm leading-6 text-slate-300">{label}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">{"Hello, I'm Partha."}</span> {"I'm a"}{" "}
-        <span className="font-bold">Frontend developer</span> with{" "}
-        <span className="font-bold">3 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. Pursuing in
-        building (and occasionally designing){" "}
-        <span className=" italic">exceptional digital experiences. </span>
-        My focus is <span className="underline">React (Next.js)</span>.
-      </motion.h1>
-
-      <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
-
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/CV.pdf"
-          download
-        >
-          Download CV{" "}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
-
-        <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 lg:hidden"
-          href="https://www.linkedin.com/in/partha-changmai-6a9293208/"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 lg:hidden"
-          href="https://github.com/ParthaChangmai"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
       </motion.div>
     </section>
   );

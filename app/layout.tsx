@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 
 import Social from "@/components/Social";
 import Footer from "@/components/footer";
@@ -8,12 +8,12 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Partha Pratim Changmai| Personal Portfolio",
+  title: "Partha Pratim Changmai | Frontend & Full Stack Engineer",
   description:
-    "Partha Pratim Changmai is a front-end developer with a 2.5 years of experience with React.js and next.js",
+    "Portfolio of Partha Pratim Changmai, a frontend and full stack engineer working with React, Next.js, TypeScript, Node.js, REST APIs, and PostgreSQL.",
 };
 
 export default function RootLayout({
@@ -24,10 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${manrope.className} relative min-h-screen bg-[#f7f8f5] pt-28 text-slate-950 antialiased selection:bg-lime-300 selection:text-slate-950 sm:pt-36 dark:bg-[#080b0a] dark:text-[#f3f5ef]`}
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+        <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,rgba(190,242,100,0.22),transparent_35%),radial-gradient(circle_at_15%_35%,rgba(56,189,248,0.12),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(132,204,22,0.12),transparent_32%),radial-gradient(circle_at_15%_35%,rgba(14,116,144,0.12),transparent_30%)]" />
+        <div className="pointer-events-none fixed inset-0 -z-10 opacity-[0.025] [background-image:linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] [background-size:48px_48px] dark:opacity-[0.05]" />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />

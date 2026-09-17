@@ -4,12 +4,31 @@
 
 html {
   --line-color: #e5e7eb;
+  background: #f7f8f5;
 }
 
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
+  background: #080b0a;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  scrollbar-color: #a3e635 transparent;
+  scrollbar-width: thin;
 }
 
 .borderBlack {
   @apply border border-black/10;
+}
+
+.surface {
+  @apply border border-slate-900/10 bg-white/75 shadow-[0_20px_70px_-45px_rgba(15,23,42,0.35)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.045];
+}
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.24em] text-lime-700 dark:text-lime-300;
 }

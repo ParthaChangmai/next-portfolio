@@ -3,21 +3,20 @@ import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaCss3, FaGithub, FaHtml5, FaPython, FaReact } from "react-icons/fa";
+import { FaCss3, FaGithub, FaHtml5, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import {
   SiChakraui,
-  SiDjango,
-  SiFirebase,
+  SiDocker,
   SiJavascript,
-  SiMongodb,
-  SiMui,
+  SiJest,
+  SiNodedotjs,
+  SiPostgresql,
   SiRedux,
-  SiSupabase,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbBrandFramerMotion, TbBrandNextjs } from "react-icons/tb";
+import { TbApi, TbBrandFramerMotion, TbBrandNextjs } from "react-icons/tb";
 
 export const links = [
   {
@@ -51,9 +50,8 @@ export const experiencesData = [
     title: "Web Development Trainee",
     location: "Java Training And Placement Center (JTPC) ",
     description: [
-      "• Working with professionals to get familiar with the new technology .",
-      "• Training in various languages such as HTML5, css, javascript, react.",
-      "• One on one training and cod review with developers for better understanding.",
+      "Trained in HTML5, CSS3, JavaScript, and React through guided web development work.",
+      "Participated in code reviews and collaborative development workflows.",
     ],
     icon: React.createElement(LuGraduationCap),
     date: "April 2019 - October 2019",
@@ -62,27 +60,24 @@ export const experiencesData = [
     title: "Associate Software Developer",
     location: "Codepilot Technologies Private Limited",
     description: [
-      "• Maintaining pre existing projects and updating the components for better usability.",
-      "• Adding new features to the react projects.",
-      "• Meetings with clients to discuss there needs and make changes according to that.",
-      "• Regular meetings with the team for suggestions.",
+      "Maintained and extended React applications, adding features and improving usability.",
+      "Collaborated with clients to translate business requirements into functional features.",
     ],
     icon: React.createElement(CgWorkAlt),
     date: "February 2020 - January 2021",
   },
   {
     title: "Software Engineer",
-    location: "Baliza",
+    location: "Baliza.io",
     description: [
-      "• Creating a new react based project from the scratch.",
-      "• Developed multiple React-based applications, including a custom CMS with an embedded video playback feature, an application for real-time customer management, and an enterprise-level portal to add alerts and emergencies all connected with google maps",
-      "• Optimized performance of all applications by reducing total load time by 20%, and updating written code to be more memory efficient, improving user-experience and application stability.",
-      "• Developed custom UI components to be reusable across all applications, leveraging a library of custom-built React components.",
-      "• Code optimization to increase the over all performance of the app, and review of other colleagues code for better understanding and more stability of the app.",
-      "• Meetings with clients for the discussion of changes and new features.",
+      "Built React and Next.js applications from the ground up, including a custom CMS with video playback and an enterprise portal integrated with Google Maps.",
+      "Designed and integrated REST APIs and Node.js services for PostgreSQL-backed applications.",
+      "Reduced application load times by over 20% using rendering optimizations, lazy loading, and code splitting.",
+      "Delivered accessible, responsive interfaces and automated UI tests with Jest and React Testing Library.",
+      "Integrated OpenAI, Claude, and Gemini APIs to automate content management workflows.",
     ],
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "July 2022 - Present",
   },
 ] as const;
 
@@ -128,7 +123,7 @@ export const skillsData = [
     icon: SiTypescript,
   },
   {
-    name: "React",
+    name: "React.js",
     icon: FaReact,
   },
   {
@@ -140,16 +135,16 @@ export const skillsData = [
     icon: TbBrandNextjs,
   },
   {
-    name: "Git",
-    icon: FaGithub,
+    name: "Node.js",
+    icon: SiNodedotjs,
   },
   {
-    name: "Firebase",
-    icon: SiFirebase,
+    name: "REST APIs",
+    icon: TbApi,
   },
   {
-    name: "Supabase",
-    icon: SiSupabase,
+    name: "PostgreSQL",
+    icon: SiPostgresql,
   },
   {
     name: "Tailwind",
@@ -160,20 +155,16 @@ export const skillsData = [
     icon: SiChakraui,
   },
   {
-    name: "Material UI",
-    icon: SiMui,
+    name: "Jest",
+    icon: SiJest,
   },
   {
-    name: "MongoDB",
-    icon: SiMongodb,
+    name: "Docker",
+    icon: SiDocker,
   },
   {
-    name: "Python",
-    icon: FaPython,
-  },
-  {
-    name: "Django",
-    icon: SiDjango,
+    name: "Git & GitHub",
+    icon: FaGithub,
   },
   {
     name: "Framer Motion",

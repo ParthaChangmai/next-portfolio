@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useSectionInView } from "@/lib/hooks";
@@ -7,48 +6,23 @@ import SectionHeading from "./section-heading";
 
 export default function About() {
   const { ref } = useSectionInView("About");
-
   return (
-    <motion.section
-      ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id="about"
-    >
-      <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">BBA</span>, I decided to pursue my passion
-        for programming. I started self study and after learning the basics, I
-        joined JTPC as a{" "}
-        <span className="font-medium">Web Development Trainee</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">React, Next.js, Firebase, Supabase</span>.
-        I am also familiar with TypeScript, Tailwind, chakra, and many more . I
-        am always looking to learn new technologies. I am currently working{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer in{" "}
-        <a
-          className="font-medium underline"
-          target="_blank"
-          href="https://baliza.io/"
-        >
-          Baliza
-        </a>
-        .
-      </p>
-
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, bike rides. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about <span className="font-medium">AI and its impacts</span>.
-      </p>
+    <motion.section ref={ref} id="about" className="mb-28 w-full max-w-[64rem] scroll-mt-28 sm:mb-36" initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }}>
+      <SectionHeading>Engineering with product context</SectionHeading>
+      <div className="grid gap-5 md:grid-cols-2">
+        <div className="surface rounded-3xl p-7 sm:p-9">
+          <p className="eyebrow mb-4">What I do</p>
+          <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">I build production web applications across the stack, from responsive React interfaces and reusable design systems to Node.js services, REST APIs, and PostgreSQL-backed features.</p>
+        </div>
+        <div className="surface rounded-3xl p-7 sm:p-9">
+          <p className="eyebrow mb-4">How I work</p>
+          <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">I collaborate with product, design, backend teams, and clients. My work emphasizes accessibility, automated testing, performance, thoughtful code reviews, and reliable delivery across browsers.</p>
+        </div>
+        <div className="surface rounded-3xl p-7 sm:col-span-2 sm:p-9">
+          <p className="eyebrow mb-4">Current focus</p>
+          <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">At Baliza.io, I&apos;ve delivered content management systems, enterprise portals with Google Maps, and AI-assisted workflows using OpenAI, Claude, and Gemini APIs. I enjoy roles where frontend craft and backend thinking meet.</p>
+        </div>
+      </div>
     </motion.section>
   );
 }

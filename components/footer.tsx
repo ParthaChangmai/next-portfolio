@@ -1,14 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      {/* <small className="mb-2 block text-xs">
-        &copy; 2030 Ricardo. All rights reserved.
-      </small> */}
-      <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
-        Framer Motion, React Email & Resend.
-      </p>
+    <footer className="mb-10 flex w-full max-w-[72rem] flex-col items-center justify-between gap-3 border-t border-slate-900/10 px-4 pt-8 text-center text-sm text-slate-500 sm:flex-row sm:text-left dark:border-white/10 dark:text-slate-400">
+      <p>© {new Date().getFullYear()} Partha Pratim Changmai</p>
+      <p>Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.</p>
     </footer>
   );
 }

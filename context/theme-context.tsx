@@ -43,12 +43,11 @@ export default function ThemeContextProvider({
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");
       }
-      setIsLoading(false);
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
-      setIsLoading(false);
     }
+    setIsLoading(false);
   }, []);
 
   return (
