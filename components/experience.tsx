@@ -12,8 +12,9 @@ export default function Experience() {
       <SectionHeading index="03" kicker="Experience">5.5+ years translating complex requirements into software people can use.</SectionHeading>
       <div className="border-t border-black/15 dark:border-white/15">
         {[...experiencesData].reverse().map((item, index) => (
-          <motion.article key={item.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5 }} className="group grid gap-5 border-b border-black/15 py-8 sm:grid-cols-[3rem_1fr] lg:grid-cols-[3rem_19rem_1fr] lg:py-10 dark:border-white/15">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-lg transition group-hover:border-[#ff7251] group-hover:bg-[#ff7251] group-hover:text-white dark:border-white/15">{item.icon}</div>
+          <motion.article key={item.title} initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} whileHover={{ x: 10 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.55, delay: index * .06, ease: [0.16, 1, 0.3, 1] }} className="group relative grid gap-5 overflow-hidden border-b border-black/15 py-8 sm:grid-cols-[3rem_1fr] lg:grid-cols-[3rem_19rem_1fr] lg:py-10 dark:border-white/15">
+            <span className="absolute inset-y-0 left-0 w-px origin-bottom scale-y-0 bg-[#ff7251] transition-transform duration-500 group-hover:scale-y-100" />
+            <motion.div whileHover={{ rotate: 12, scale: 1.1 }} className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 text-lg transition group-hover:border-[#ff7251] group-hover:bg-[#ff7251] group-hover:text-white dark:border-white/15">{item.icon}</motion.div>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#ff7251]">{item.date}</p>
               <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em]">{item.title}</h3>

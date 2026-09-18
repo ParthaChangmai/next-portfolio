@@ -16,7 +16,7 @@ export default function Header() {
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       >
-        <Link href="#home" className="relative z-10 mr-auto hidden h-9 w-9 items-center justify-center rounded-xl bg-[#10110f] text-xs font-black text-[#c7ff35] dark:bg-[#c7ff35] dark:text-[#10110f] sm:flex">PC</Link>
+        <motion.div whileHover={{ rotate: -8, scale: 1.08 }} whileTap={{ scale: .94 }} className="relative z-10 mr-auto hidden sm:block"><Link href="#home" className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#10110f] text-xs font-black text-[#c7ff35] shadow-[0_8px_20px_-12px_rgba(0,0,0,.8)] dark:bg-[#c7ff35] dark:text-[#10110f]">PC</Link></motion.div>
         <a href="#contact" className="relative z-10 ml-auto hidden items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] sm:flex"><span className="h-2 w-2 rounded-full bg-[#c7ff35] shadow-[0_0_0_4px_rgba(199,255,53,.14)]" />Available</a>
       </motion.div>
 

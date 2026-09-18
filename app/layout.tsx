@@ -3,6 +3,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Manrope } from "next/font/google";
 
 import Footer from "@/components/footer";
+import MotionEnvironment from "@/components/motion-environment";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
         className={`${manrope.className} relative min-h-screen bg-[#f4f1e9] pt-24 text-[#10110f] antialiased selection:bg-[#c7ff35] selection:text-[#10110f] sm:pt-32 dark:bg-[#090a08] dark:text-[#f4f1e9]`}
       >
         <div className="ambient-bg" />
+        <MotionEnvironment />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
