@@ -1,6 +1,3 @@
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaCss3, FaGithub, FaHtml5, FaReact } from "react-icons/fa";
@@ -27,10 +24,10 @@ export const links = [
     name: "About",
     hash: "#about",
   },
-  // {
-  //   name: "Projects",
-  //   hash: "#projects",
-  // },
+  {
+    name: "Projects",
+    hash: "#projects",
+  },
   {
     name: "Skills",
     hash: "#skills",
@@ -83,25 +80,34 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Montra",
+    eyebrow: "Personal finance command center",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "A private financial operating system for transactions, budgets, savings goals, analytics, CSV workflows, and account-level data protection.",
+    outcome: "Full CRUD finance workflows with Supabase authentication, PostgreSQL RLS, live calculations, and responsive analytics.",
+    tags: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Recharts"],
+    repoUrl: "https://github.com/ParthaChangmai/personal-finance-command-center",
+    visual: "finance",
   },
   {
-    title: "rmtDev",
+    title: "Job Tracker Pro AI",
+    eyebrow: "AI-assisted career platform",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "A full-stack workspace for finding roles, analyzing resume fit, and managing every application across kanban and table views.",
+    outcome: "Combines live job search, resume parsing, AI enrichment, OAuth, analytics, reminders, and a private application pipeline.",
+    tags: ["Next.js 15", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "AI"],
+    repoUrl: "https://github.com/ParthaChangmai/Job-Portal",
+    visual: "jobs",
   },
   {
-    title: "Word Analytics",
+    title: "World Music Pulse",
+    eyebrow: "Global music discovery",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "A visual-first discovery experience that turns worldwide music charts into cinematic browsing, comparison, and trend stories.",
+    outcome: "Live Apple Music charts, iTunes enrichment, country comparisons, rank movement, and resilient snapshot fallbacks without required API keys.",
+    tags: ["Next.js 16", "React 19", "TypeScript", "Framer Motion", "Music APIs"],
+    repoUrl: "https://github.com/ParthaChangmai/Top-Music",
+    visual: "music",
   },
 ] as const;
 

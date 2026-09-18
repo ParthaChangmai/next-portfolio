@@ -35,7 +35,7 @@ export default function Skills() {
 
   return (
     <section id="skills" ref={ref} className="mb-28 w-full max-w-[72rem] scroll-mt-28 sm:mb-40">
-      <SectionHeading index="02" kicker="Capabilities">One connected system, from interface craft to production infrastructure.</SectionHeading>
+      <SectionHeading index="03" kicker="Capabilities">One connected system, from interface craft to production infrastructure.</SectionHeading>
 
       <div className="grid gap-4 lg:grid-cols-12">
         <motion.article initial={{ opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ duration: .7, ease: [0.16, 1, 0.3, 1] }} className="group relative min-h-[31rem] overflow-hidden rounded-[2rem] bg-[#10110f] p-7 text-white shadow-[0_35px_80px_-52px_rgba(0,0,0,.95)] sm:p-9 lg:col-span-7">

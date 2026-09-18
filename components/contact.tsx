@@ -16,7 +16,7 @@ export default function Contact() {
       <motion.div aria-hidden className="absolute -bottom-28 left-[35%] h-64 w-64 rounded-full bg-[#ff7251]/20 blur-[90px]" animate={{ x: [-40, 80, -40] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
       <div className="relative z-10 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c7ff35]">04 · Let&apos;s talk</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c7ff35]">05 · Let&apos;s talk</p>
           <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .65 }} className="display-text mt-6 text-5xl font-semibold leading-[0.92] tracking-[-0.065em] sm:text-6xl">Have a hard problem worth solving?</motion.h2>
           <p className="mt-7 max-w-md text-lg leading-8 text-white/60">I&apos;m open to frontend and full stack roles where product quality and engineering depth both matter.</p>
           <a className="mt-8 inline-flex items-center gap-2 border-b border-white/40 pb-1 text-sm font-bold" href="mailto:partha.partha.changmai@gmail.com">partha.partha.changmai@gmail.com <BsArrowUpRight /></a>

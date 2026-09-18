@@ -81,7 +81,7 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="mb-28 w-full max-w-[72rem] scroll-mt-28 sm:mb-40">
-      <SectionHeading index="03" kicker="Selected impact">The work behind the role: products, systems, and outcomes.</SectionHeading>
+      <SectionHeading index="04" kicker="Selected impact">The work behind the role: products, systems, and outcomes.</SectionHeading>
 
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-6 flex flex-col justify-between gap-5 border-y border-black/15 py-5 sm:flex-row sm:items-center dark:border-white/15">
         <div className="flex items-center gap-4"><span className="grid h-11 w-11 place-items-center rounded-full bg-[#10110f] text-xl text-[#c7ff35] dark:bg-[#c7ff35] dark:text-[#10110f]">{currentRole.icon}</span><div><h3 className="font-semibold">{currentRole.title} · {currentRole.location}</h3><p className="mt-1 text-xs text-black/45 dark:text-white/45">{currentRole.date}</p></div></div>

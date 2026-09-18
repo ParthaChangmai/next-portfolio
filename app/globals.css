@@ -4,6 +4,7 @@
 
 html {
   --line-color: rgba(16, 17, 15, 0.16);
+  position: relative;
   background: #f4f1e9;
 }
 

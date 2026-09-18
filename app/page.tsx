@@ -5,6 +5,7 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Loader from "@/components/loader";
+import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import { useTheme } from "@/context/theme-context";
 
@@ -19,7 +20,7 @@ export default function Home() {
     <main className="flex flex-col items-center px-4 sm:px-6">
       <Intro />
       <About />
-      {/* <Projects /> */}
+      <Projects />
       <Skills />
       <Experience />
       <Contact />
