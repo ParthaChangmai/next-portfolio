@@ -85,6 +85,14 @@ export const projectsData = [
     description:
       "A private financial operating system for transactions, budgets, savings goals, analytics, CSV workflows, and account-level data protection.",
     outcome: "Full CRUD finance workflows with Supabase authentication, PostgreSQL RLS, live calculations, and responsive analytics.",
+    capabilities: [
+      "Create, edit, delete, search, import, and export transactions",
+      "Track monthly budgets against live category spending",
+      "Build savings goals and record individual contributions",
+      "Use privacy mode, alerts, analytics, and seeded demo data",
+    ],
+    architecture:
+      "Supabase SSR protects authenticated routes while PostgreSQL Row-Level Security isolates profiles, transactions, budgets, and goals for every account at the database layer.",
     tags: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Recharts"],
     repoUrl: "https://github.com/ParthaChangmai/personal-finance-command-center",
     visual: "finance",
@@ -95,6 +103,14 @@ export const projectsData = [
     description:
       "A full-stack workspace for finding roles, analyzing resume fit, and managing every application across kanban and table views.",
     outcome: "Combines live job search, resume parsing, AI enrichment, OAuth, analytics, reminders, and a private application pipeline.",
+    capabilities: [
+      "Search live roles and save them with per-user duplicate protection",
+      "Parse PDF, DOCX, TXT, and Markdown resumes for fit analysis",
+      "Manage notes, reminders, follow-ups, and application status",
+      "Switch between Kanban, table, analytics, and CSV export views",
+    ],
+    architecture:
+      "Server Components handle data-first pages, route handlers keep third-party secrets private, and both job search and AI analysis degrade to realistic local fallbacks when external keys are unavailable.",
     tags: ["Next.js 15", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "AI"],
     repoUrl: "https://github.com/ParthaChangmai/Job-Portal",
     visual: "jobs",
@@ -105,6 +121,14 @@ export const projectsData = [
     description:
       "A visual-first discovery experience that turns worldwide music charts into cinematic browsing, comparison, and trend stories.",
     outcome: "Live Apple Music charts, iTunes enrichment, country comparisons, rank movement, and resilient snapshot fallbacks without required API keys.",
+    capabilities: [
+      "Browse live country charts with search and grid or list views",
+      "Compare national charts and identify songs crossing borders",
+      "Explore track details, metadata, artwork, and related music",
+      "Follow new, rising, stable, and falling tracks across snapshots",
+    ],
+    architecture:
+      "A reusable provider layer combines Apple Music RSS data with iTunes enrichment, then falls back to local JSON snapshots so charts, comparisons, and trend stories remain available when a live request fails.",
     tags: ["Next.js 16", "React 19", "TypeScript", "Framer Motion", "Music APIs"],
     repoUrl: "https://github.com/ParthaChangmai/Top-Music",
     visual: "music",
