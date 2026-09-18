@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Manrope } from "next/font/google";
 
-import Social from "@/components/Social";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
@@ -24,16 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${manrope.className} relative min-h-screen bg-[#f7f8f5] pt-28 text-slate-950 antialiased selection:bg-lime-300 selection:text-slate-950 sm:pt-36 dark:bg-[#080b0a] dark:text-[#f3f5ef]`}
+        className={`${manrope.className} relative min-h-screen bg-[#f4f1e9] pt-24 text-[#10110f] antialiased selection:bg-[#c7ff35] selection:text-[#10110f] sm:pt-32 dark:bg-[#090a08] dark:text-[#f4f1e9]`}
       >
-        <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,rgba(190,242,100,0.22),transparent_35%),radial-gradient(circle_at_15%_35%,rgba(56,189,248,0.12),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(132,204,22,0.12),transparent_32%),radial-gradient(circle_at_15%_35%,rgba(14,116,144,0.12),transparent_30%)]" />
-        <div className="pointer-events-none fixed inset-0 -z-10 opacity-[0.025] [background-image:linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] [background-size:48px_48px] dark:opacity-[0.05]" />
+        <div className="ambient-bg" />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
             <Footer />
-            <Social />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>

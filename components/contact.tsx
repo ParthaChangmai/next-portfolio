@@ -1,77 +1,33 @@
 "use client";
 
-// import { sendEmail } from "@/actions/sendEmail";
 import { sendEmail } from "@/actions/sendEmail";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { BsArrowUpRight } from "react-icons/bs";
 import toast, { Toaster } from "react-hot-toast";
-import SectionHeading from "./section-heading";
 import SubmitBtn from "./submit-btn";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
-
+  const { ref } = useSectionInView("Contact", 0.3);
   return (
-    <motion.section
-      id="contact"
-      ref={ref}
-      className="surface mb-20 w-[min(100%,48rem)] rounded-[2rem] px-6 py-10 text-center sm:mb-28 sm:px-12 sm:py-12"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-    >
+    <motion.section id="contact" ref={ref} className="relative mb-12 w-full max-w-[72rem] overflow-hidden rounded-[2rem] bg-[#10110f] px-6 py-10 text-white sm:px-10 sm:py-14 lg:px-16 lg:py-16" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
       <Toaster position="top-right" reverseOrder={false} />
-      <SectionHeading>Let&apos;s build something useful</SectionHeading>
-
-      <p className="-mt-6 text-slate-600 dark:text-slate-300">
-        Have a frontend or full stack role in mind? Email me at{" "}
-        <a className="underline" href="mailto:partha.partha.changmai@gmail.com">
-          partha.partha.changmai@gmail.com
-        </a>{" "}
-        or use the form below.
-      </p>
-
-      <form
-        className="mt-10 flex flex-col text-left dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
-      >
-        <input
-          aria-label="Your email"
-          className="h-14 rounded-xl border border-slate-900/10 bg-white px-4 outline-none transition focus:border-lime-500 focus:ring-4 focus:ring-lime-300/20 dark:bg-white/90"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          aria-label="Your message"
-          className="my-3 h-52 rounded-xl border border-slate-900/10 bg-white p-4 outline-none transition focus:border-lime-500 focus:ring-4 focus:ring-lime-300/20 dark:bg-white/90"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[3.5rem] border-[#c7ff35]/90" />
+      <div className="relative z-10 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c7ff35]">04 · Let&apos;s talk</p>
+          <h2 className="display-text mt-6 text-5xl font-semibold leading-[0.92] tracking-[-0.065em] sm:text-6xl">Have a hard problem worth solving?</h2>
+          <p className="mt-7 max-w-md text-lg leading-8 text-white/60">I&apos;m open to frontend and full stack roles where product quality and engineering depth both matter.</p>
+          <a className="mt-8 inline-flex items-center gap-2 border-b border-white/40 pb-1 text-sm font-bold" href="mailto:partha.partha.changmai@gmail.com">partha.partha.changmai@gmail.com <BsArrowUpRight /></a>
+        </div>
+        <form className="grid content-start gap-3" action={async (formData) => { const { error } = await sendEmail(formData); if (error) { toast.error(error); return; } toast.success("Message sent — I'll get back to you soon."); }}>
+          <label className="text-xs font-bold uppercase tracking-[0.16em] text-white/45" htmlFor="senderEmail">Your email</label>
+          <input id="senderEmail" className="mb-4 h-14 border-0 border-b border-white/20 bg-transparent px-0 text-white outline-none transition placeholder:text-white/25 focus:border-[#c7ff35] focus:ring-0" name="senderEmail" type="email" required maxLength={500} placeholder="you@company.com" />
+          <label className="text-xs font-bold uppercase tracking-[0.16em] text-white/45" htmlFor="message">Tell me about the role or project</label>
+          <textarea id="message" className="mb-5 h-36 resize-none border-0 border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-white/25 focus:border-[#c7ff35] focus:ring-0" name="message" placeholder="What are you building?" required maxLength={5000} />
+          <SubmitBtn />
+        </form>
+      </div>
     </motion.section>
   );
 }
