@@ -3,12 +3,14 @@
 import { sendEmail } from "@/actions/sendEmail";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import toast, { Toaster } from "react-hot-toast";
 import SubmitBtn from "./submit-btn";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.3);
+  const formRef = useRef<HTMLFormElement>(null);
   return (
     <motion.section id="contact" ref={ref} className="relative mb-12 w-full max-w-[72rem] overflow-hidden rounded-[2rem] bg-[#10110f] px-6 py-10 text-white sm:px-10 sm:py-14 lg:px-16 lg:py-16" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }}>
       <Toaster position="top-right" reverseOrder={false} />
@@ -21,7 +23,7 @@ export default function Contact() {
           <p className="mt-7 max-w-md text-lg leading-8 text-white/60">I&apos;m open to frontend and full stack roles where product quality and engineering depth both matter.</p>
           <a className="mt-8 inline-flex items-center gap-2 border-b border-white/40 pb-1 text-sm font-bold" href="mailto:partha.partha.changmai@gmail.com">partha.partha.changmai@gmail.com <BsArrowUpRight /></a>
         </div>
-        <form className="grid content-start gap-3" action={async (formData) => { const { error } = await sendEmail(formData); if (error) { toast.error(error); return; } toast.success("Message sent — I'll get back to you soon."); }}>
+        <form ref={formRef} className="grid content-start gap-3" action={async (formData) => { const { error } = await sendEmail(formData); if (error) { toast.error(error); return; } formRef.current?.reset(); toast.success("Message sent — I'll get back to you soon."); }}>
           <label className="text-xs font-bold uppercase tracking-[0.16em] text-white/45" htmlFor="senderEmail">Your email</label>
           <input id="senderEmail" className="mb-4 h-14 border-0 border-b border-white/20 bg-transparent px-0 text-white outline-none transition placeholder:text-white/25 focus:border-[#c7ff35] focus:ring-0" name="senderEmail" type="email" required maxLength={500} placeholder="you@company.com" />
           <label className="text-xs font-bold uppercase tracking-[0.16em] text-white/45" htmlFor="message">Tell me about the role or project</label>
